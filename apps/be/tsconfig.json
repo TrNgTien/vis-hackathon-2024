@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "target": "es2015",
+    "outDir": "dist",
+    "moduleResolution": "node",
+    "rootDir": "src",
+    "allowJs": true,
+    "baseUrl": "src",
+    "sourceMap":true,
+    "paths": {
+      "@/*": [ "./*"]
+    },
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "esModuleInterop": true,
+    "importHelpers": false
+  },
+  "include": ["src"],
+  "exclude": ["node_modules"]
+}
+
