@@ -25,7 +25,8 @@
     "docker:build": "docker build -t vis_be .",
     "docker:run": "docker run -p 3000:3000 -d lb",
     "dev": "NODE_ENV=development RUN_MODE=startup DEBUG=true ts-node -r dotenv-flow/config -r source-map-support/register .",
-    "fe": "yarn workspace fe dev",
-    "be": "node index.js"
+    "fe": "yarn workspace vis_fe dev",
+    "start:fe": "yarn workspace vis_fe start",
+    "start:be": "yarn workspace vis_be start"
   }
 }
