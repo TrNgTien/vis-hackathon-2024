@@ -3,7 +3,9 @@
 
 # Source Structure: Monolithic
 
+```
 .
 └── ./apps/
     ├── /fe -> Next.js
     └── /be -> Node.js (Express.js)
+```
