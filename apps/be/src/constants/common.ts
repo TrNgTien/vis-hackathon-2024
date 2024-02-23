@@ -8,6 +8,7 @@ export class App {
 export class Endpoints {
   static readonly AUTH = 'auth';
   static readonly USER = 'users';
+  static readonly POST = 'posts';
 }
 
 export class Limit{
