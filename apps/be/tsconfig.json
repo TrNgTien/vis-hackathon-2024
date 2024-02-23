@@ -6,6 +6,7 @@
     "rootDir": "src",
     "allowJs": true,
     "baseUrl": "src",
+    "checkJs": false,
     "sourceMap":true,
     "paths": {
       "@/*": [ "./*"]

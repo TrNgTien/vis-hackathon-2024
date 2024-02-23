@@ -68,3 +68,4 @@ packages/*/dist
 .idea
 
 .env
+.env.local

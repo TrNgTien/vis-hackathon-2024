@@ -1,5 +1,4 @@
-import { authRepositoryInstance } from '@/repositories/auth.repository';
-import { userRepositoryInstance } from '@/repositories/user.repository';
+import { authRepositoryInstance, userRepositoryInstance } from '@/repositories';
 import { errorResponse, getError, responseSuccess } from '@/utils';
 import { Request, Response } from 'express';
 
@@ -19,7 +18,7 @@ class AuthService {
       const result = await authRepositoryInstance.signIn(req);
 
       responseSuccess(res, result);
-    } catch (e: any) {
+    } catch (e: unknown) {
       errorResponse(res, e);
     }
   }
@@ -47,8 +46,7 @@ class AuthService {
       return responseSuccess(res, {
         message: 'Create account successfully!',
       });
-
-    } catch (e: any) {
+    } catch (e: unknown) {
       errorResponse(res, e);
     }
   }
