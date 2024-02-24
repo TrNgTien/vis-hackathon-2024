@@ -1,4 +1,4 @@
-import dotenv from "dotenv";
+import dotenv from 'dotenv';
 
 dotenv.config();
 
@@ -14,7 +14,7 @@ class Environment {
   }
 
   get(key: string) {
-    return process.env[key] ?? "";
+    return process.env[key] ?? '';
   }
 }
 

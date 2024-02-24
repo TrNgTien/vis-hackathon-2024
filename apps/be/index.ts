@@ -1,6 +1,6 @@
 import { environment } from "@/helpers";
 import express, { Express, Request, Response } from "express";
-import MainRoutes from "./routes";
+import MainRoutes from "./src/routes";
 
 const mainApplication = async () => {
   const app: Express = express();

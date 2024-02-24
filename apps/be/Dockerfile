@@ -4,20 +4,20 @@ FROM node:18-slim
 # Set the working directory in the container
 WORKDIR /app
 
-# Copy package.json and package-lock.json to the container
-COPY package*.json ./
+COPY package.json ./
+
+COPY yarn.lock ./
 
 # Install project dependencies
-RUN npm install
+RUN npm install -g yarn
 
-# Copy the rest of the application code to the container
-COPY . .
+RUN yarn install
 
-# Copy the .env file to the container
+COPY ./dist .
+
 COPY .env .env
 
-# Expose the port that your Node.js application uses (if needed)
-EXPOSE 3000
+EXPOSE 8080
 
 # Start the Node.js application
 CMD ["node", "index.js"]

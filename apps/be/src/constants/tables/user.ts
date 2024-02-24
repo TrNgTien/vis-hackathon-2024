@@ -1,4 +1,4 @@
-import { ITableTemplateName } from "../types";
+import { ITableTemplateName } from '../types';
 
 export default class User {
   static readonly NAME = {
@@ -35,15 +35,19 @@ export default class User {
     };
   }
 
-    static useTableAlias(
+  static useTableAlias(
     alias?: string,
-  ): [ReturnType<typeof this.getTableWithAlias>, ReturnType<typeof this.getColumns>] {
+  ): [
+    ReturnType<typeof this.getTableWithAlias>,
+    ReturnType<typeof this.getColumns>,
+  ] {
     return [this.getTableWithAlias(alias), this.getColumns(alias)];
   }
 
-  static useTableWithName(): [ITableTemplateName, ReturnType<typeof this.getColumns>] {
+  static useTableWithName(): [
+    ITableTemplateName,
+    ReturnType<typeof this.getColumns>,
+  ] {
     return [this.NAME, this.getColumns()];
   }
-
-
 }

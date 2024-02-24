@@ -1,22 +1,16 @@
 {
   "compilerOptions": {
-    "target": "es2015",
-    "outDir": "dist",
-    "moduleResolution": "node",
-    "rootDir": "src",
-    "allowJs": true,
-    "baseUrl": "src",
-    "checkJs": false,
-    "sourceMap":true,
-    "paths": {
-      "@/*": [ "./*"]
-    },
-    "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
-    "importHelpers": false
+    "outDir": "./dist",
+    "baseUrl": "./",
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "paths": {
+      "@/*": ["src/*"],
+      "@/constants/*": ["src/constants/*"]
+    }
   },
-  "include": ["src"],
   "exclude": ["node_modules"]
 }
-
