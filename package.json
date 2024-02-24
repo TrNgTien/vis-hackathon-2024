@@ -27,6 +27,8 @@
     "dev": "NODE_ENV=development RUN_MODE=startup DEBUG=true ts-node -r dotenv-flow/config -r source-map-support/register .",
     "fe": "yarn workspace vis_fe dev",
     "start:fe": "yarn workspace vis_fe start",
-    "start:be": "yarn workspace vis_be start"
+    "server:local": "NODE_ENV=local yarn workspace vis_be start",
+    "be": "yarn workspace vis_be start",
+    "server:prod": "NODE_ENV=production  yarn workspace vis_be start"
   }
 }

@@ -1,6 +1,12 @@
 import { postServiceInstance } from '@/services';
-import { Express } from 'express';
+const router = require('express').Router();
 
-export default (app: Express) => {
-  app.use(`/test`, postServiceInstance.isExisted);
-};
+router.get('/', postServiceInstance.isExisted);
+
+router.post('/', postServiceInstance.isExisted);
+
+router.delete('/:id', postServiceInstance.isExisted);
+
+router.put('/:id', postServiceInstance.isExisted);
+
+export default router;

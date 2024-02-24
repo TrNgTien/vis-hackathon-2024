@@ -1,21 +1,20 @@
-import { environment } from "@/helpers";
-import express, { Express, Request, Response } from "express";
-import MainRoutes from "./src/routes";
+import { environment } from '@/helpers';
+import express, { Express, Request, Response } from 'express';
+import MainRoutes from './src/routes';
 
 const mainApplication = async () => {
   const app: Express = express();
-  const PORT = environment.get("APP_ENV_PORT") || 8080;
+  const PORT = environment.get('APP_ENV_PORT') || 8080;
 
   //-----------------------------------------------
   app.use(express.json());
   app.use(express.urlencoded({ extended: true }));
 
   //-----------------------------------------------
-  app.get("/", (_req: Request, res: Response) => {
+  app.get('/up', (_req: Request, res: Response) => {
     const healthcheck = {
-      uptime: process.uptime().toLocaleString(),
-      message: "OK",
-      timestamp: Date.now(),
+      uptime: `${(process.uptime() / 60).toLocaleString()}m`,
+      message: 'OK',
     };
     try {
       res.send(healthcheck);
@@ -30,7 +29,7 @@ const mainApplication = async () => {
 
   //-----------------------------------------------
   app.listen(PORT, () => {
-    console.log(`⚡️[server]: Server is running at http://localhost:${PORT}`);
+    console.log(`⚡️[VIS]: Server is running at http://localhost:${PORT}`);
   });
 };
 
