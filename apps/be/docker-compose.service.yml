@@ -2,7 +2,7 @@ version: '3'
 
 services:
   vis_db:
-     image: "bitnami/postgresql:16"
+    image: "bitnami/postgresql:16"
     container_name: vis_db
     ports:
       - ${POSTGRES_PORT_EXPOSE}:${POSTGRES_PORT}
