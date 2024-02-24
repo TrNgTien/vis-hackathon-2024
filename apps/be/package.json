@@ -9,6 +9,7 @@
     "build": "sh clean.sh && tsc -p tsconfig.json && tsc-alias -p tsconfig.json",
     "preserver:watch": "yarn build",
     "start": "node dist/index.js",
+    "build:docker": "sh ./build-docker.sh",
     "server:watch": "nodemon"
   },
   "dependencies": {

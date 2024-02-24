@@ -1,0 +1,25 @@
+version: '3'
+
+services:
+  vis_db:
+     image: "bitnami/postgresql:16"
+    container_name: vis_db
+    ports:
+      - ${POSTGRES_PORT_EXPOSE}:${POSTGRES_PORT}
+    restart: always
+    volumes:
+      - ${POSTGRES_VOLUMES}:/bitnami/postgresql
+    environment:
+      - POSTGRES_HOST=${POSTGRES_HOST}
+      - POSTGRES_PORT=${POSTGRES_PORT}
+      - POSTGRES_USERNAME=${POSTGRES_USERNAME}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - POSTGRES_DATABASE=${POSTGRES_DATABASE}
+  vis_meili:
+    container_name: vis_meili
+    image: getmeili/meilisearch:v1.5
+    restart: always
+    ports:
+      - 7700:7700
+    environment:
+      - MEILI_MASTER_KEY=vis-dev.01
