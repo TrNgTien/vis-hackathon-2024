@@ -105,6 +105,13 @@ const DetailCard = () => {
             <P>{description} </P>
             <hr />
             <P>{hastag} </P>
+
+            <H3>Recommend: </H3>
+
+            <H3>Bookstore List: </H3>
+            <ul>
+              <li>1. Nguyen Van Cu</li>
+            </ul>
           </Grid>
         </Grid>
       </Grid>
