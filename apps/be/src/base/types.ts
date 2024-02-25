@@ -1,4 +1,4 @@
-import { AnyObject } from "@/constants";
+import { AnyObject } from '@/constants';
 
 export interface IRepositoryProps {
   page?: number;
@@ -14,3 +14,4 @@ export interface IBaseRepository {
   createAll(e: any): void;
   updateById(id: number, data: any): Promise<void>;
 }
+

@@ -15,3 +15,12 @@ const firebaseConfig = {
 export const app = initializeApp(firebaseConfig);
 
 export const bucket = getStorage().bucket();
+
+// const firebaseConfig = {
+//   apiKey: "AIzaSyBKV_DJQ9XgLvrzLcCOZeo1qnr4cJMmH3M",
+//   authDomain: "test-46807.firebaseapp.com",
+//   projectId: "test-46807",
+//   storageBucket: "test-46807.appspot.com",
+//   messagingSenderId: "421763724963",
+//   appId: "1:421763724963:web:1a066337dc0e58536ff116"
+// };

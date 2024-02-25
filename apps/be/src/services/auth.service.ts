@@ -17,9 +17,15 @@ class AuthService {
     try {
       const result = await authRepositoryInstance.signIn(req);
 
-      responseSuccess(res, result);
+      responseSuccess({
+        res,
+        payload: result,
+      });
     } catch (e: unknown) {
-      errorResponse(res, e);
+      errorResponse({
+        res,
+        e,
+      });
     }
   }
 
@@ -43,11 +49,9 @@ class AuthService {
 
       await authRepositoryInstance.signUp(req, res);
 
-      return responseSuccess(res, {
-        message: 'Create account successfully!',
-      });
+      return responseSuccess({ res, payload: null });
     } catch (e: unknown) {
-      errorResponse(res, e);
+      errorResponse({ res, e });
     }
   }
 }

@@ -1,14 +1,14 @@
-import { BaseRepository } from "@/base";
-import tables from "@/constants/tables";
-import { compareHash, encryptHash, generateToken } from "@/helpers";
-import { dayjs, getError, insertBuilder, queryBuilder } from "@/utils";
-import { Request, Response } from "express";
+import { BaseRepository } from '@/base';
+import tables from '@/constants/tables';
+import { compareHash, encryptHash, generateToken } from '@/helpers';
+import { dayjs, getError, insertBuilder, queryBuilder } from '@/utils';
+import { Request, Response } from 'express';
 
 class AuthRepository extends BaseRepository {
   private static instance: AuthRepository;
 
   constructor() {
-    super({ table: "User" });
+    super({ table: 'User' });
   }
 
   //------------------------------------------------
@@ -23,7 +23,7 @@ class AuthRepository extends BaseRepository {
     const { username, password } = req.body ?? {};
 
     if (!username || !password) {
-      throw getError({ message: "Please input missing fields!!" });
+      throw getError({ message: 'Please input missing fields!!' });
     }
 
     const userTbl = tables.User.NAME.withQuotationMarks;
@@ -42,7 +42,7 @@ class AuthRepository extends BaseRepository {
     const isUser = compareHash(password, rs?.[0].password);
 
     if (!isUser) {
-      throw getError({ statusCode: 401, message: "Unauthorized!" });
+      throw getError({ statusCode: 401, message: 'Unauthorized!' });
     }
 
     return {

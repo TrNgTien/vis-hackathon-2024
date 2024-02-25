@@ -1,4 +1,5 @@
 import { environment } from '@/helpers';
+import cors from 'cors';
 import express, { Express, Request, Response } from 'express';
 import MainRoutes from './src/routes';
 
@@ -8,6 +9,7 @@ const mainApplication = async () => {
 
   //-----------------------------------------------
   app.use(express.json());
+  app.use(cors());
   app.use(express.urlencoded({ extended: true }));
 
   //-----------------------------------------------
